@@ -1,0 +1,558 @@
+<!doctype html>
+
+  
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Top Charts</title>
+
+    <!-- jQuery -->
+    <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <script type="text/javascript">
+    /// some script
+
+    // jquery ready start
+    $(document).ready(function() {
+    	// jQuery code
+
+    	//////////////////////// Prevent closing from click inside dropdown
+        $(document).on('click', '.dropdown-menu', function (e) {
+          e.stopPropagation();
+        });
+
+        // make it as accordion for smaller screens
+        if ($(window).width() < 992) {
+    	  	$('.dropdown-menu a').click(function(e){
+              if ($(this).attr('class').search("dropdown-toggle")>-1) {
+                  e.preventDefault();
+              }
+    	        if($(this).next('.submenu').length){
+    	        	$(this).next('.submenu').toggle();
+    	        }
+    	        $('.dropdown').on('hide.bs.dropdown', function () {
+    			   $(this).find('.submenu').hide();
+    			})
+    	  	});
+    	}
+    }); // jquery end
+    </script>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <style type="text/css">
+    	@media (min-width: 992px){
+        .dropdown-menu .nav-item a { color: #000 !important; }
+    		.dropdown-menu .dropdown-toggle:after{
+    			border-top: .3em solid transparent;
+    		    border-right: 0;
+    		    border-bottom: .3em solid transparent;
+    		    border-left: .3em solid;
+    		}
+        .navbar-fixed-top .navbar-collapse{
+            max-height:none;
+        }
+    		.dropdown-menu .dropdown-menu{
+    			margin-left:0; margin-right: 0;
+    		}
+    		.dropdown-menu li{
+    			position: relative;
+    		}
+    		.nav-item .submenu{
+    			display: none;
+    			position: absolute;
+    			left:100%; top:-7px;
+    		}
+    		.nav-item .submenu-left{
+    			right:100%; left:auto;
+    		}
+    		.dropdown-menu > li:hover{ background-color: #f3f3f3 }
+    		.dropdown-menu > li:hover > .submenu{
+    			display: block;
+    		}
+    	}
+    </style>
+
+    <!-- Styles -->
+
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #fofofo;">
+      <a class="navbar-brand" href="/">
+        Mobility Markets
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="D:\HomeLab\mobilitymarkets\thebrowniceman.github.io\premium\p.html">Top Charts <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="premium/p.html">Market share <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="premium/p.html">Brands <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="premium/p.html">Models <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Markets </a>
+              <ul class="dropdown-menu"> 
+                  <li><a class="dropdown-item" href="premium/p.html">Americas</a>
+                  <li><a class="dropdown-item" href="premium/p.html">Asia Pacific</a>
+                  <li><a class="dropdown-item" href="premium/p.html">Europa</a>
+                  <li><a class="dropdown-item" href="premium/p.html">Rest of the World</a>
+              </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Industry </a>
+              <ul class="dropdown-menu"> 
+                  <li><a class="dropdown-item" href="premium/p.html">Americas</a>
+                  <li><a class="dropdown-item" href="premium/p.html">Asia Pacific</a>
+                  <li><a class="dropdown-item" href="premium/p.html">Europa</a>
+                  <li><a class="dropdown-item" href="premium/p.html">Rest of the World</a>
+              </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Technology </a>
+              <ul class="dropdown-menu"> 
+                  <li><a class="dropdown-item" href="premium/p.html">E-Mobility</a>
+              </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="premium/p.html">Data status</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="premium/p.html">About</a>
+        </li>
+
+        </ul>
+      </div>
+    </nav>
+    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Top Charts:</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#subnav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="subnav">
+    <ul class="navbar-nav">
+
+<li class="nav-item dropdown">
+<a href="#"  class="nav-link dropdown-toggle" data-toggle="dropdown" >World</a>
+<ul class="dropdown-menu">
+            <li>
+<a href="premium/p.html"  class="dropdown-item" >World</a>
+</li>
+            <li>
+<a href="premium/p.html"  class="dropdown-item" >China</a>
+</li>
+            <li>
+<a href="premium/p.html"  class="dropdown-item" >Germany</a>
+</li>
+<li>
+  <a href="premium/p.html"  class="dropdown-item" >India</a>
+  </li>
+  <li>
+    <a href="premium/p.html"  class="dropdown-item" >South Korea</a>
+</li>
+<li>
+  <a href="premium/p.html"  class="dropdown-item" >Japan</a>
+</li>
+<li>
+  <a href="premium/p.html"  class="dropdown-item" >USA</a>
+</li>
+<li>
+  <a href="premium/p.html"  class="dropdown-item" >UK</a>
+</li>
+<li>
+  <a href="premium/p.html"  class="dropdown-item" >France</a>
+</li>
+  </ul>
+</li>
+
+<li class="nav-item dropdown">
+<a href="#"  class="nav-link dropdown-toggle" data-toggle="dropdown" >March 2021</a>
+<ul class="dropdown-menu">
+            <li>
+<a href="#"  class="dropdown-item dropdown-toggle" >Year</a>
+<ul class="submenu dropdown-menu">
+            <li>
+<a href="premium/p.html"  class="dropdown-item" >2021</a>
+</li>
+  </ul>
+</li>
+            <li>
+<a href="#"  class="dropdown-item dropdown-toggle" >Month</a>
+<ul class="submenu dropdown-menu">
+
+            <li>
+<a href="#"  class="dropdown-item dropdown-toggle" >2021</a>
+<ul class="submenu dropdown-menu">
+            <li>
+<a href="#"  class="dropdown-item" >Jan-2021</a>
+</li>
+            <li>
+<a href="#"  class="dropdown-item" >Feb-2021</a>
+</li>
+            <li>
+<a href="#"  class="dropdown-item" >Mar-2021</a>
+</li>
+            <li>
+<a href="#"  class="dropdown-item" >Apr-2021</a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="container-fluid">
+            <div class="row">
+                                <div class="col-2"></div>
+                <div class="col-8">
+                                <div class="card">
+    <div class="card-header card-header-success card-header-icon">
+      <h6 class="card-title" align="center">
+      Top Charts for March 2021. &nbsp; Countries:
+            <img src="D:\HomeLab\mobilitymarkets\thebrowniceman.github.io\img\world@3x.png" alt="World"></img>
+            </h6>
+    </div>
+</div>
+                </div>
+                                <div class="col-2"></div>
+                            </div>
+            <div class="row">
+                                <div class="col-2">
+                  <!-- Ezoic - bestsellers-sidebar-1 - sidebar -->
+                  <div id="ezoic-pub-ad-placeholder-167">
+
+                    <!-- Bestsellers - Vertical 1 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-5712660209920143"
+                         data-ad-slot="1133470696"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+
+                  </div>
+                  <!-- End Ezoic - bestsellers-sidebar-1 - sidebar -->
+                </div>
+                                                <div class="col-4">
+                
+                    <div class="card">
+                        <div class="card-header card-header-success card-header-icon">
+                            <h6 class="card-title" align="center">Top brands</h6>
+                        </div>
+                        <div class="card-body ">
+                            <table id="latestDateTable" class="table table-condensed table-striped table-sm table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                <tr>
+                                    <th>MAKE</th>
+                                    <th>#</th>
+                                </tr>
+                                                                    <tr>
+                                        <td><a href="#">Tesla</td>
+                                        <td>108398</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">SGMW</td>
+                                        <td>42652</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">BMW</td>
+                                        <td>28550</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">Volkswagen</td>
+                                        <td>31886</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">BYD</td>
+                                        <td>23484</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">MERCEDES-BENZ</td>
+                                        <td>25286</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">Volvo</td>
+                                        <td>20124</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">SAIC</td>
+                                        <td>16452</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">Audi</td>
+                                        <td>15838</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">Great Wall</td>
+                                        <td>13057</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">PEUGEOT</td>
+                                        <td>12247</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">RENAULT</td>
+                                        <td>13260</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">KIA</td>
+                                        <td>12866</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">TOYOTA</td>
+                                        <td>10226</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">NIO</td>
+                                        <td>7449</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">HYUNDAI</td>
+                                        <td>10218</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">FORD</td>
+                                        <td>8193</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">GAC</td>
+                                        <td>7090</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">NISSAN</td>
+                                        <td>7741</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">CHERY</td>
+                                        <td>5638</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="#">OTHERS</td>
+                                        <td>111047</td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+                                                            <!-- Ezoic - bottom_of_page - bottom_of_page -->
+                    <div id="ezoic-pub-ad-placeholder-170">
+                      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                      <!-- Bestsellers - Col 1 -->
+                      <ins class="adsbygoogle"
+                           style="display:block"
+                           data-ad-client="ca-pub-5712660209920143"
+                           data-ad-slot="7324115153"
+                           data-ad-format="auto"
+                           data-full-width-responsive="true"></ins>
+                      <script>
+                           (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </div>
+                    <!-- End Ezoic - bottom_of_page - bottom_of_page -->
+                                                        </div>
+                                <div class="col-4">
+                                    <div class="card ">
+                        <div class="card-header card-header-success card-header-icon">
+                            <h6 class="card-title" align="center">Top models </h6>
+                        </div>
+                        <div class="card-body ">
+                                                      <table id="latestDateTable" class="table table-condensed table-striped table-sm table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                <tr>
+                                    <th>MAKE</th>
+                                    <th>MODEL</th>
+                                    <th>#</th>
+                                </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/VOLKSWAGEN/NO">TESLA</td>
+                                        <td><a href="/modelCharts/VOLKSWAGEN/ID.4/NO">Model 3</td>
+                                        <td>75888</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/FORD/NO">WULING</td>
+                                        <td><a href="/modelCharts/FORD/MUSTANG MACH-E/NO">HongGuang Mini EV</td>
+                                        <td>39745</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/SKODA/NO">TESLA</td>
+                                        <td><a href="/modelCharts/SKODA/ENYAQ/NO">Model Y</td>
+                                        <td>32197</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/HYUNDAI/NO">BYD</td>
+                                        <td><a href="/modelCharts/HYUNDAI/IONIQ5/NO">Han EV</td>
+                                        <td>7956</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/KIA/NO">GW</td>
+                                        <td><a href="/modelCharts/KIA/NIRO/NO">ORA Black Cat</td>
+                                        <td>8531</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/MERCEDES-BENZ/NO">NISSAN</td>
+                                        <td><a href="/modelCharts/MERCEDES-BENZ/EQC/NO">Leaf</td>
+                                        <td>7511</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/VOLVO/NO">GAC</td>
+                                        <td><a href="/modelCharts/VOLVO/XC40/NO">Aion S</td>
+                                        <td>5741</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/TOYOTA/NO">HYUNDAI</td>
+                                        <td><a href="/modelCharts/TOYOTA/PROACE/NO">Kona EV</td>
+                                        <td>7623</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/CITROEN/NO">VOLVO</td>
+                                        <td><a href="/modelCharts/CITROEN/JUMPY/NO">XC60 PHEV</td>
+                                        <td>6081</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/VOLKSWAGEN/NO">AUDI</td>
+                                        <td><a href="/modelCharts/VOLKSWAGEN/ID.3/NO">e-Tron</td>
+                                        <td>6420</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/AUDI/NO">VOLVO</td>
+                                        <td><a href="/modelCharts/AUDI/E-TRON/NO">XC40 PHEV</td>
+                                        <td>5812</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/POLESTAR/NO">BMW</td>
+                                        <td><a href="/modelCharts/POLESTAR/2/NO">530e/Le</td>
+                                        <td>5193</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/TESLA/NO">RENAULT</td>
+                                        <td><a href="/modelCharts/TESLA/MODEL 3/NO">Zoe</td>
+                                        <td>5648</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/SKODA/NO">Li Xiang </td>
+                                        <td><a href="/modelCharts/SKODA/CITIGO/NO">One EREV</td>
+                                        <td>4900</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/NISSAN/NO">CHERY</td>
+                                        <td><a href="/modelCharts/NISSAN/LEAF/NO">eQ</td>
+                                        <td>4708</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/PEUGEOT/NO">KIA</td>
+                                        <td><a href="/modelCharts/PEUGEOT/E-2008/NO">NIRO EV</td>
+                                        <td>5120</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/BMW/NO">VW</td>
+                                        <td><a href="/modelCharts/BMW/IX3/NO">ID.3</td>
+                                        <td>4992</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/HYUNDAI/NO">BMW</td>
+                                        <td><a href="/modelCharts/HYUNDAI/KONA/NO">330e</td>
+                                        <td>5474</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/KIA/NO">Mercedes</td>
+                                        <td><a href="/modelCharts/KIA/SOUL/NO">GLC300e/de</td>
+                                        <td>5032</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><a href="/brandCharts/OPEL/NO">CHEVROLET</td>
+                                        <td><a href="/modelCharts/OPEL/VIVARO/NO">Bolt</td>
+                                        <td>6123</td>
+                                    </tr>
+                            </table>
+                                                  </div>
+                    </div>
+                                        <!-- Ezoic - bottom_of_page - bottom_of_page -->
+                    <div id="ezoic-pub-ad-placeholder-171">
+
+                      <!-- Bestsellers - Col 2 -->
+                      <ins class="adsbygoogle"
+                           style="display:block"
+                           data-ad-client="ca-pub-5712660209920143"
+                           data-ad-slot="7132543462"
+                           data-ad-format="auto"
+                           data-full-width-responsive="true"></ins>
+
+                    </div>
+                    <!-- End Ezoic - bottom_of_page - bottom_of_page -->
+                                    </div>
+                                <div class="col-2">
+                  <!-- Ezoic - bestsellers-sidebar-2 - sidebar -->
+                  <div id="ezoic-pub-ad-placeholder-168">
+
+                    <!-- Bestsellers - Vertical 2 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-5712660209920143"
+                         data-ad-slot="9431403749"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+
+                  </div>
+                  <!-- End Ezoic - bestsellers-sidebar-2 - sidebar -->
+                </div>
+                            </div>
+        </div>
+  <!------------------------------------------------------------------------------------------------------------------------>
+
+
+  </div>
+
+  <footer class="bd-footer p-3  mt-5 bg-light text-center text-sm-start">
+    <div class="container">
+      <div class="row">
+      <div class="col">
+        Mobility Markets (c) thebrowniceman 2021, all rights reserved
+      </div>
+      </div>
+      <div class="row">
+      <div class="col">
+      <a href="premium/p.html">Terms of Service</a>
+      </div>
+      <div class="col">
+      <a href="premium/p.html">Privacy policy</a>
+      </div>
+      <div class="col">
+      <a href = "mailto: deepak.purushothaman@rwth-aachen.de">Contact us</a>
+      </div>
+      <div class="col">
+      <a href = "https://www.patreon.com/mobilitymarkets">Premium Market Studies</a>
+      </div>
+    </div>
+    </div>
+    </footer> 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>  
+  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
+</body>
+</html>
+<scripts>
+  
+</scripts>
