@@ -299,7 +299,104 @@
         var dateFormat = "YYYY-MM-DD";
         var chartOptions = {"title":"","yAxis":"Registrations by month (cumulative)","xAxis":"Month"};
         var labels1 = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-        var dataset = [{"label":"2021","fill":false,"pointBackgroundColor":"#332288","backgroundColor":"#332288","borderColor":"#332288","data":[{"x":"Jan","y":"25248"},{"x":"Feb","y":50042},{"x":"Mar","y":108758}]}];
+        var dataset = [{"label":"2021","fill":false,"pointBackgroundColor":"#332288","backgroundColor":"#332288","borderColor":"#332288","data":[{"x":"Jan","y":"25248"},{"x":"Feb","y":50042},{"x":"Mar","y":108758}]},
+		       {"label":"2020","fill":false,"pointBackgroundColor":"#88CCEE","backgroundColor":"#88CCEE","borderColor":"#88CCEE","data":[{"x":"Jan","y":"22516"},{"x":"Feb","y":44105},{"x":"Mar","y":70525},{"x":"Apr","y":81992},{"x":"May","y":102454},{"x":"Jun","y":133330},{"x":"Jul","y":154039},{"x":"Aug","y":182738},{"x":"Sep","y":218630},{"x":"Oct","y":241713},{"x":"Nov","y":277767},{"x":"Dec","y":336302}]},
+		       {"label":"2019","fill":false,"pointBackgroundColor":"#C0392B","backgroundColor":"#C0392B","borderColor":"#C0392B","data":[{"x":"Jan","y":"17261"},{"x":"Feb","y":35256},{"x":"Mar","y":61956},{"x":"Apr","y":74709},{"x":"May","y":86772},{"x":"Jun","y":109649},{"x":"Jul","y":124909},{"x":"Aug","y":141460},{"x":"Sep","y":172564},{"x":"Oct","y":188282},{"x":"Nov","y":210226},{"x":"Dec","y":252382}]},
+		       {"label":"2018","fill":false,"pointBackgroundColor":"#9B59B6","backgroundColor":"#9B59B6","borderColor":"#9B59B6","data":[{"x":"Jan","y":"1900"},{"x":"Feb","y":4500},{"x":"Mar","y":8180},{"x":"Apr","y":11980},{"x":"May","y":18291},{"x":"Jun","y":23841},{"x":"Jul","y":39381},{"x":"Aug","y":56881},{"x":"Sep","y":80881},{"x":"Oct","y":99481},{"x":"Nov","y":119281},{"x":"Dec","y":144285}]},
+		       {"label":"2017","fill":false,"pointBackgroundColor":"#2980B9","backgroundColor":"#2980B9","borderColor":"#2980B9","data":[{"x":"Jan","y":"0"},{"x":"Feb","y":0},{"x":"Mar","y":0},{"x":"Apr","y":0},{"x":"May","y":0},{"x":"Jun","y":0},{"x":"Jul","y":30},{"x":"Aug","y":100},{"x":"Sep","y":220},{"x":"Oct","y":370},{"x":"Nov","y":720},{"x":"Dec","y":1770}]}
+		      ];
+        var chartType = "line";
+        var lineChartData = {
+            labels: labels1,
+            datasets: dataset
+        };
+
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            sizeX = document.documentElement.clientWidth;
+            sizeY = document.documentElement.clientHeight;
+            coords = ctx.canvas.getBoundingClientRect();
+
+            newsizeY = sizeY-coords.y-70;
+            if (newsizeY<400) {
+              newsizeY=400;
+            }
+            ctx.canvas.height = newsizeY;
+            window.myBar = new Chart(ctx, {
+                type: chartType,
+                data: lineChartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    /*title: {
+                        display: true,
+                        text: title1
+                    },*/
+                    scales: {
+                      yAxes: [{
+                          stacked: false,
+                          scaleLabel: {
+                              display: true,
+                              labelString: chartOptions.yAxis
+                          }
+                      }],
+                      xAxes: [{
+                          scaleLabel: {
+                              display: true,
+                              labelString: chartOptions.xAxis
+                          }}]
+                        /*,
+                        xAxes: [{
+						                    display: true,
+						                    scaleLabel: {
+							                  display: true,
+							                  labelString: 'Day of Quarter'
+						                    }
+                              }]*/
+                    }
+
+                }
+            });
+
+        };
+    </script>
+  </div>
+  <footer class="bd-footer p-3  mt-5 bg-light text-center text-sm-start">
+    <div class="container">
+      <div class="row">
+      <div class="col">
+        Mobility Markets (c) <a href = "https://deepakrajpurushothaman.github.io/"> thebrowniceman </a> 2021, all rights reserved
+      </div>
+      </div>
+      <div class="row">
+      <div class="col">
+      <a href="premium/p.html">Terms of Service</a>
+      </div>
+      <div class="col">
+      <a href="premium/p.html">Privacy policy</a>
+      </div>
+      <div class="col">
+      <a href = "mailto: deepak.purushothaman@rwth-aachen.de">Contact us</a>
+      </div>
+      <div class="col">
+      <a href = "https://www.patreon.com/mobilitymarkets">Premium Market Studies</a>
+      </div>
+    </div>
+    </div>
+    </footer>  
+  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>  
+  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
+
+</body>
+</html>
+<scripts>
+  </scripts>
+
+		      ];
         var chartType = "line";
         var lineChartData = {
             labels: labels1,
