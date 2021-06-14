@@ -40,7 +40,7 @@
 			data: {
 				datasets: [{
 					type: 'line',
-					yAxisID: 'temperature',
+					yAxisID: 'Registrations By Month (Cummulative)',
 					backgroundColor: 'transparent',
 					borderColor: chartColors.red,
 					pointBackgroundColor: chartColors.red,
@@ -52,7 +52,7 @@
 			options: {
 				title: {
 					display: true,
-					text: 'Sheet data source (dataset) sample'
+					text: 'YoY cumulative xEV registratons comparison for D Segment'
 				},
 				scales: {
 					xAxes: [{
@@ -62,13 +62,13 @@
 						}
 					}],
 					yAxes: [{
-						id: 'temperature',
+						id: 'Registrations By Month (Cummulative)',
 						gridLines: {
 							drawOnChartArea: false
 						},
 						scaleLabel: {
 							display: true,
-							labelString: 'Temperature (°C)'
+							labelString: 'Registrations By Month (Cummulative)'
 						}
 					}]
 				},
