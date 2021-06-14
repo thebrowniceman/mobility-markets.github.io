@@ -46,10 +46,6 @@
 					pointBackgroundColor: chartColors.red,
 					tension: 0,
 					fill: false
-				}, {
-					yAxisID: 'precipitation',
-					backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
-					borderColor: 'transparent'
 				}]
 			},
 			plugins: [ChartDataSource],
@@ -74,16 +70,6 @@
 							display: true,
 							labelString: 'Temperature (°C)'
 						}
-					}, {
-						id: 'precipitation',
-						position: 'right',
-						gridLines: {
-							drawOnChartArea: false
-						},
-						scaleLabel: {
-							display: true,
-							labelString: 'Precipitation (mm)'
-						}
 					}]
 				},
 				plugins: {
@@ -91,9 +77,9 @@
 						type: 'sheet',
 						url: 'sample-dataset.xlsx',
 						rowMapping: 'dataset',
-						datasetLabels: 'Sheet1!A2:A3',
+						datasetLabels: 'Sheet1!A2',
 						indexLabels: 'Sheet1!B1:H1',
-						data: 'Sheet1!B2:H3'
+						data: 'Sheet1!B2:H2'
 					}
 				}
 			}
