@@ -1,26 +1,30 @@
 <!doctype html>
+<html>
 
-  
-<html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <title>Mobility Markets</title>
-    <link rel="shortcut icon" type="image/jpg" href="https://mobility-markets.com/img/favicon.ico"/>
-  
-    <!-- jQuery -->
-    <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+	
+	<link rel="shortcut icon" type="image/jpg" href="https://mobility-markets.com/img/favicon.ico"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	
+	<script type="text/javascript">
+        /// some script
 
-
-    <script type="text/javascript">
-    /// some script
-
-    // jquery ready start
-    $(document).ready(function() {
+        // jquery ready start
+        $(document).ready(function() {
     	// jQuery code
 
     	//////////////////////// Prevent closing from click inside dropdown
@@ -40,285 +44,274 @@
     	        $('.dropdown').on('hide.bs.dropdown', function () {
     			   $(this).find('.submenu').hide();
     			})
-    	  	});
-    	}
-    }); // jquery end
-    </script>
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <style type="text/css">
-    	@media (min-width: 992px){
-        .dropdown-menu .nav-item a { color: #000 !important; }
-    		.dropdown-menu .dropdown-toggle:after{
-    			border-top: .3em solid transparent;
-    		    border-right: 0;
-    		    border-bottom: .3em solid transparent;
-    		    border-left: .3em solid;
-    		}
-        .navbar-fixed-top .navbar-collapse{
-            max-height:none;
-        }
+    	  	    });
+    	    }
+        }); // jquery end
+            </script>
+	<script type="text/javascript">
+		$(function() {
+  // Sidebar toggle behavior
+  $('#sidebarCollapse').on('click', function() {
+    $('#sidebar, #content').toggleClass('active');
+  });
+});
+	</script>
+	
+	    <style type="text/css">
+    	    @media (min-width: 992px){
+            .dropdown-menu .nav-item a { color: #000 !important; }
+    		    .dropdown-menu .dropdown-toggle:after{
+    			    border-top: .3em solid transparent;
+    		        border-right: 0;
+    		        border-bottom: .3em solid transparent;
+    		        border-left: .3em solid;
+    		        }
+            .navbar-fixed-top .navbar-collapse{
+                max-height:none;
+                }
     		.dropdown-menu .dropdown-menu{
     			margin-left:0; margin-right: 0;
-    		}
+    		    }
     		.dropdown-menu li{
     			position: relative;
-    		}
+    		    }
     		.nav-item .submenu{
     			display: none;
     			position: absolute;
     			left:100%; top:-7px;
-    		}
+    		    }
     		.nav-item .submenu-left{
     			right:100%; left:auto;
-    		}
+    		    }
     		.dropdown-menu > li:hover{ background-color: #f3f3f3 }
     		.dropdown-menu > li:hover > .submenu{
     			display: block;
-    		}
-    	}
-    </style>
+    		    }
+		    .vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+		    .page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
 
-    <!-- Styles -->
+/* for toggle behavior */
 
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+    	    }
+        </style>
+	
+	<style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+		.chart {
+			margin: auto;
+			width: 75%;
+		}
+		.text-center {
+			text-align: center;
+		}
+	</style>
+	
 </head>
+
 <body>
-  <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #00BCD4;">
-      <a class="navbar-brand" href="/">
-        Mobility Markets
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://mobility-markets.com/TopCharts/Table/World/Models/Year/2021/Month/March2021"> Top Vehicles <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mobility-markets.com/Models/Nissan/Leaf/World/YoY"> Models <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mobility-markets.com/Brands/MercedesBenz/World/YoY"> Brands <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mobility-markets.com/Segments/DSegment/Tesla/World/YoY"> Segments <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mobility-markets.com/premium/p"> Attributes <span class="sr-only">(current)</span></a>
-          </li>
-	  <li class="nav-item">
-            <a class="nav-link" href="https://mobility-markets.com/TopMarkets/Table/Brands/Tesla/Jan2021"> Top Markets <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mobility-markets.com/MarketShare/Pie/Germany/Brands/Year/2021/Month/Jan2021"> Market share <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mobility-markets.com/premium/p"> Industry <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Technology </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Electric Vehicles </a>
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Autonomous Vehicles </a>
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Battery </a>
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Charging </a>
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Vehicle Data </a>
-            </ul>
-        </li>
-	<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Innovation </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Electric Vehicles </a>
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Autonomous Vehicles </a>
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Battery </a>
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Charging </a>
-                <li><a class="dropdown-item" href="https://mobility-markets.com/premium/p"> Vehicle Data </a>
-            </ul>
-        </li>
-        </ul>
-          
-        <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="https://mobility-markets.com/status">Data status</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="https://mobility-markets.com/about">About</a>
-        </li>
-
-        </ul>
+	<div id="app">
+		
+		<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center"><img src="https://mobility-markets.com/img/default.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      <div class="media-body">
+        <h4 class="m-0">
+		<a class="navbar-brand" href="https://mobility-markets.com/">Mobility <br> Markets</a></h4>
+        <p class="font-weight-light text-muted mb-0"></p>
       </div>
-    </nav>
-    
-  
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Brands:</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#subnav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="subnav">
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-<a href="#"  class="nav-link dropdown-toggle" data-toggle="dropdown" >Mercedes Benz</a>
-<ul class="dropdown-menu">
-    <li>
-        <a href="https://mobility-markets.com/Brands/Audi/World/YoY"  class="dropdown-item" >Audi</a>
-    </li>
-    <li>
-      <a href="https://mobility-markets.com/Brands/BMW/World/YoY"  class="dropdown-item" >BMW</a>
-    </li>
-    <li>
-      <a href="https://mobility-markets.com/Brands/Geely/World/YoY"  class="dropdown-item" >Geely</a>
-    </li>
-    <li>
-      <a href="https://mobility-markets.com/Brands/MercedesBenz/World/YoY"  class="dropdown-item" >Mercedes Benz</a>
-    </li>
-    <li>
-        <a href="https://mobility-markets.com/Brands/Tesla/World/YoY"  class="dropdown-item" >Tesla</a>
-    </li>
-    <li>
-      <a href="https://mobility-markets.com/Brands/Toyota/World/YoY"  class="dropdown-item" >Toyota</a>
-    </li>
-    <li>
-      <a href="https://mobility-markets.com/Brands/Volkswagen/World/YoY"  class="dropdown-item" >Volkswagen</a>
-    </li>
-    <li>
-      <a href="https://mobility-markets.com/Brands/Volvo/World/YoY"  class="dropdown-item" >Volvo</a>
-    </li>
-    <li>
-      <a href="https://mobility-markets.com/Brands/Wuling/World/YoY"  class="dropdown-item" >Wuling</a>
-    </li>
-  </ul>
-</li>
-<li class="nav-item dropdown">
-<a href="https://mobility-markets.com/Brands/MercedesBenz/World/YoY"  class="nav-link dropdown-toggle" data-toggle="dropdown" >World</a>
-<ul class="dropdown-menu">
-            <li>
-<a href="https://mobility-markets.com/premium/p"  class="dropdown-item" >China</a>
-</li>
-            <li>
-<a href="https://mobility-markets.com/premium/p"  class="dropdown-item" >France</a>
-</li>
-            <li>
-<a href="https://mobility-markets.com/premium/p"  class="dropdown-item" >Germany</a>
-</li>
-            <li>
-<a href="https://mobility-markets.com/premium/p"  class="dropdown-item" >India</a>
-</li>
-	<li>
-<a href="https://mobility-markets.com/premium/p"  class="dropdown-item" >Japan</a>
-</li>
-	<li>
-<a href="https://mobility-markets.com/premium/p"  class="dropdown-item" >Korea</a>
-</li>
-	    <li>
-<a href="https://mobility-markets.com/premium/p"  class="dropdown-item" >UK</a>
-</li>
-            <li>
-<a href="https://mobility-markets.com/premium/p"  class="dropdown-item" >USA</a>
-</li>
-  </ul>
-</li>
-<li class="nav-item dropdown">
-<a href="#"  class="nav-link dropdown-toggle" data-toggle="dropdown" >YoY-Chart</a>
-<ul class="dropdown-menu">
-            <li>
-<a href="#"  class="dropdown-item" >YoY - Chart</a>
-</li>
-  </ul>
-</li>
-    </ul>
+    </div>
   </div>
-</nav>
 
-  <div class="container-fluid">
-    <div class="row">
-            <div class="col-1">
-        <!-- Ezoic - bestSellersCharts-sidebar-1 - sidebar -->
-        <div id="ezoic-pub-ad-placeholder-173">
-          <!-- Brandcharts - Vertical 1 -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5712660209920143"
-               data-ad-slot="7134243585"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-        <!-- Ezoic - sidebar_bottom - sidebar_bottom -->
-        <div id="ezoic-pub-ad-placeholder-174">
-        <!-- End Ezoic - bestSellersCharts-sidebar-1 - sidebar -->
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Product Index</p>
 
-          <!-- Brandcharts - Vertical 3 -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5712660209920143"
-               data-ad-slot="1690345213"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-        <!-- End Ezoic - sidebar_bottom - sidebar_bottom -->
-      </div>
-                  <div class="col-10">
-            <div class="card">
-          <div class="card">
-    <div class="card-header card-header-success card-header-icon">
-      <h6 class="card-title" align="center">
-      YoY cumulative xEV registratons comparison for Mercedes Benz. &nbsp; Countries:
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                Top Vehicles
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                Models
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                Brands
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="https://mobility-markets.com/Segments/DSegment/Tesla/World/sheet-dataset" class="nav-link text-dark font-italic">
+                <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                Segments
+            </a>
+    </li>
+  </ul>
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Market Index</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                Top Markets
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                Market Share
+            </a>
+    </li>
+  </ul>
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Industry Index</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                Country
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                Enterprise 
+            </a>
+    </li>
+  </ul>
+			
+  <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Technology Index</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                Electrification
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                Autonomous 
+            </a>
+    </li>
+	      <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                Connectivity 
+            </a>
+    </li>
+	 	      <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                Intermodal  
+            </a>
+    </li> 
+  </ul>
+			
+</div>
+<!-- End vertical navbar -->
+
+
+<!-- Page content holder -->
+<div class="container-fluid">
+<div class="page-content p-5" id="content">
+  <!-- Toggle button -->
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-primary rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+  <button type="button" class="btn btn-primary dropdown-toggle rounded-pill shadow-sm px-4 mb-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Segment
+  </button>
+	<div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+  <button type="button" class="btn btn-primary dropdown-toggle rounded-pill shadow-sm px-4 mb-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Brand
+  </button>
+	<div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+  <button type="button" class="btn btn-primary dropdown-toggle rounded-pill shadow-sm px-4 mb-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Market
+  </button>
+	<div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+	
+
+	
+	<div class="card bg-transparent text-center border-primary mb-3">
+	
+	  <div class="card-header text-primary bg-transparent border-primary">
+          <h6 class="card-title" align="center">
+          YoY cumulative xEV registratons comparison for Mercedes Benz. &nbsp; Countries:
             <img src="https://mobility-markets.com/img/world@3x.png" alt="World"></img>
             </h6>
-    </div>
-</div>
-          <div class="card-body">
-            <div class="chart-container" id="chartContainer" style="position: relative">
+          </div>
+		
+	  <div class="card-body">
+		
+            <div class="chart">
                               <canvas id="canvas" ></canvas>
                           </div>
-          </div>
-      </div>
-              <!-- Ezoic -  bestSellersCharts-bottom - bottom_of_page -->
-        <div id="ezoic-pub-ad-placeholder-177">
-          <!-- Brandcharts - Horizontal 1 -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5712660209920143"
-               data-ad-slot="8802548479"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-        <!-- End Ezoic -  bestSellersCharts-bottom - bottom_of_page -->
-            </div>
-            <div class="col-1">
-        <!-- Ezoic - bestSellersCharts-sidebar-2 - sidebar -->
-        <div id="ezoic-pub-ad-placeholder-175">
-          <!-- Brandcharts - Vertical 2 -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5712660209920143"
-               data-ad-slot="3074018570"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-        <!-- End Ezoic - bestSellersCharts-sidebar-2 - sidebar -->
-        <!-- Ezoic - bestSellersCharts-sidebar-4 - sidebar_bottom -->
-        <div id="ezoic-pub-ad-placeholder-176">
-          <!-- Brandcharts - Vertical 4 -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5712660209920143"
-               data-ad-slot="8173182453"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-        <!-- End Ezoic - bestSellersCharts-sidebar-4 - sidebar_bottom -->
-      </div>
-          </div>
-  </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
     <script>
 
         var dateFormat = "YYYY-MM-DD";
@@ -385,38 +378,11 @@
 
         };
     </script>
-  </div>
-  <footer class="bd-footer p-3  mt-5 bg-light text-center text-sm-start">
-    <div class="container">
-      <div class="row">
-      <div class="col">
-        Mobility Markets (c) <a href = "https://deepakrajpurushothaman.github.io/"> thebrowniceman </a> 2021, all rights reserved
-      </div>
-      </div>
-      <div class="row">
-      <div class="col">
-      <a href="premium/p.html">Terms of Service</a>
-      </div>
-      <div class="col">
-      <a href="premium/p.html">Privacy policy</a>
-      </div>
-      <div class="col">
-      <a href = "mailto: deepak.purushothaman@rwth-aachen.de">Contact us</a>
-      </div>
-      <div class="col">
-      <a href = "https://www.patreon.com/mobilitymarkets">Premium Market Studies</a>
-      </div>
-    </div>
-    </div>
-    </footer>  
-  
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>  
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>  
-  
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
-
+		  
+	</div>	
+	</div>
+	</div>
+</div>
 </body>
+
 </html>
-<scripts>
-  </scripts>
