@@ -18,6 +18,35 @@
 	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
 	
+	<script type="text/javascript">
+        /// some script
+
+        // jquery ready start
+        $(document).ready(function() {
+    	// jQuery code
+
+    	//////////////////////// Prevent closing from click inside dropdown
+        $(document).on('click', '.dropdown-menu', function (e) {
+          e.stopPropagation();
+        });
+
+        // make it as accordion for smaller screens
+        if ($(window).width() < 992) {
+    	  	$('.dropdown-menu a').click(function(e){
+              if ($(this).attr('class').search("dropdown-toggle")>-1) {
+                  e.preventDefault();
+              }
+    	        if($(this).next('.submenu').length){
+    	        	$(this).next('.submenu').toggle();
+    	        }
+    	        $('.dropdown').on('hide.bs.dropdown', function () {
+    			   $(this).find('.submenu').hide();
+    			})
+    	  	    });
+    	    }
+        }); // jquery end
+        </script>
+	
 	<style>
 		canvas {
 			-moz-user-select: none;
