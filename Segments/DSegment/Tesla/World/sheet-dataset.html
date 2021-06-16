@@ -315,15 +315,10 @@
 		    <canvas id="myChart"></canvas>
 	    </div>
 
-	<script>
+		<script>
 		var chartColors = {
 			red: 'rgb(255, 99, 132)',
-			orange: 'rgb(255, 159, 64)',
-			yellow: 'rgb(255, 205, 86)',
-			green: 'rgb(75, 192, 192)',
-			blue: 'rgb(54, 162, 235)',
-			purple: 'rgb(153, 102, 255)',
-			grey: 'rgb(201, 203, 207)'
+			blue: 'rgb(54, 162, 235)'
 		};
 
 		var color = Chart.helpers.color;
@@ -332,22 +327,23 @@
 			data: {
 				datasets: [{
 					type: 'line',
-					yAxisID: 'Registrations By Month',
+					yAxisID: 'Sales by Type',
 					backgroundColor: 'transparent',
 					borderColor: chartColors.red,
 					pointBackgroundColor: chartColors.red,
 					tension: 0,
 					fill: false
-				}, {
+				},
+					  {
 					backgroundColor: 'transparent',
-					borderColor: chartColors.blue,
-					pointBackgroundColor: chartColors.blue,
+					borderColor: chartColors.red,
+					pointBackgroundColor: chartColors.red,
 					tension: 0,
 					fill: false
-				}, {
+				},{
 					backgroundColor: 'transparent',
-					borderColor: chartColors.purple,
-					pointBackgroundColor: chartColors.purple,
+					borderColor: chartColors.red,
+					pointBackgroundColor: chartColors.red,
 					tension: 0,
 					fill: false
 				}]
@@ -356,7 +352,7 @@
 			options: {
 				title: {
 					display: true,
-					text: 'YoY cumulative xEV registratons comparison for D Segment'
+					text: 'D Segment Sales for Tesla (Wprld)'
 				},
 				scales: {
 					xAxes: [{
@@ -366,13 +362,13 @@
 						}
 					}],
 					yAxes: [{
-						id: 'Registrations By Month (Cummulative)',
+						id: 'Sales By Type',
 						gridLines: {
 							drawOnChartArea: false
 						},
 						scaleLabel: {
 							display: true,
-							labelString: 'Registrations By Month (Cummulative)'
+							labelString: 'Number'
 						}
 					}]
 				},
