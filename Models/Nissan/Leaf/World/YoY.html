@@ -354,7 +354,7 @@
   </li>
 
 <li class="nav-item dropdown">
-  <a href="#"  class="nav-link dropdown-toggle" data-toggle="dropdown" >Leaf</a>
+  <a href="#"  class="nav-link dropdown-toggle" data-toggle="dropdown" >All Models</a>
   <ul class="dropdown-menu">
 	                <li>
   <a href="#"  class="dropdown-item" >All Models</a>
@@ -410,84 +410,104 @@
 	
 	  <div class="card-header text-primary bg-transparent border-primary">
           <h6 class="card-title" align="center">
-          YoY cumulative registratons comparison for Nissan Leaf. &nbsp; Countries:
+          YoY registratons comparison for Alliance Group. &nbsp; Countries:
             <img src="https://mobility-markets.com/img/world@3x.png" alt="World"></img>
             </h6>
           </div>
 		
 	  <div class="card-body">
 		
-          <div class="chart">
-                              <canvas id="canvas" ></canvas>
-          </div>
+	    <div class="chart">
+		    <canvas id="myChart"></canvas>
+	    </div>
 
+	<script>
+		var chartColors = {
+			red: 'rgb(255, 99, 132)',
+			purple: 'rgb(153, 102, 255)',
+			green: 'rgb(75, 192, 192)',
+			orange: 'rgb(255, 159, 64)',
+			blue: 'rgb(54, 162, 235)'
+		};
 
-    <script>
+		var color = Chart.helpers.color;
+		var config = {
+			type: 'line',
+			data: {
+				datasets: [{
+					backgroundColor: 'transparent',
+					borderColor: chartColors.red,
+					pointBackgroundColor: chartColors.red,
+					tension: 0,
+					fill: false
+				},{
+					backgroundColor: 'transparent',
+					borderColor: chartColors.blue,
+					pointBackgroundColor: chartColors.blue,
+					tension: 0,
+					fill: false
+				},{
+					backgroundColor: 'transparent',
+					borderColor: chartColors.purple,
+					pointBackgroundColor: chartColors.purple,
+					tension: 0,
+					fill: false
+				},{
+					backgroundColor: 'transparent',
+					borderColor: chartColors.green,
+					pointBackgroundColor: chartColors.green,
+					tension: 0,
+					fill: false
+				},{
+					backgroundColor: 'transparent',
+					borderColor: chartColors.blue,
+					pointBackgroundColor: chartColors.blue,
+					tension: 0,
+					fill: false
+				}]
+			},
+			plugins: [ChartDataSource],
+			options: {
+				title: {
+					display: true,
+					text: 'D Segment xEV sales for Tesla'
+				},
+				scales: {
+					xAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						}
+					}],
+					yAxes: [{
+						id: 'temperature',
+						gridLines: {
+							drawOnChartArea: false
+						},
+						scaleLabel: {
+							display: true,
+							labelString: 'Sales by Segment'
+						}
+					}]
+				},
+				plugins: {
+					datasource: {
+						type: 'sheet',
+						url: 'https://mobility-markets.com/Dataset/Segment/Dataset_Group_Alliance.xlsx',
+						rowMapping: 'dataset',
+						datasetLabels: 'Sheet1!A2:A6',
+						indexLabels: 'Sheet1!B1:M1',
+						data: 'Sheet1!B2:M6'
+					}
+				}
+			}
+		};
 
-        var dateFormat = "YYYY-MM-DD";
-        var chartOptions = {"title":"","yAxis":"Registrations by month (cumulative)","xAxis":"Month"};
-        var labels1 = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-        var dataset = [{"label":"2021","fill":false,"pointBackgroundColor":"#332288","backgroundColor":"#332288","borderColor":"#332288","data":[{"x":"Jan","y":"3707"},{"x":"Feb","y":7544},{"x":"Mar","y":15055}]},
-		       {"label":"2020","fill":false,"pointBackgroundColor":"#88CCEE","backgroundColor":"#88CCEE","borderColor":"#88CCEE","data":[{"x":"Jan","y":"4967"},{"x":"Feb","y":11706},{"x":"Mar","y":16766},{"x":"Apr","y":18369},{"x":"May","y":20753},{"x":"Jun","y":23883},{"x":"Jul","y":27906},{"x":"Aug","y":31511},{"x":"Sep","y":36844},{"x":"Oct","y":41646},{"x":"Nov","y":47492},{"x":"Dec","y":55724}]},
-		       {"label":"2019","fill":false,"pointBackgroundColor":"#C0392B","backgroundColor":"#C0392B","borderColor":"#C0392B","data":[{"x":"Jan","y":"7316"},{"x":"Feb","y":12557},{"x":"Mar","y":20290},{"x":"Apr","y":24603},{"x":"May","y":29299},{"x":"Jun","y":34546},{"x":"Jul","y":40538},{"x":"Aug","y":45826},{"x":"Sep","y":52609},{"x":"Oct","y":57501},{"x":"Nov","y":62980},{"x":"Dec","y":68227}]},
-		       {"label":"2018","fill":false,"pointBackgroundColor":"#9B59B6","backgroundColor":"#9B59B6","borderColor":"#9B59B6","data":[{"x":"Jan","y":"4481"},{"x":"Feb","y":10766},{"x":"Mar","y":21550},{"x":"Apr","y":27427},{"x":"May","y":34345},{"x":"Jun","y":40767},{"x":"Jul","y":47715},{"x":"Aug","y":55057},{"x":"Sep","y":63926},{"x":"Oct","y":71558},{"x":"Nov","y":79591},{"x":"Dec","y":84930}]},
-		       {"label":"2017","fill":false,"pointBackgroundColor":"#2980B9","backgroundColor":"#2980B9","borderColor":"#2980B9","data":[{"x":"Jan","y":"3813"},{"x":"Feb","y":8091},{"x":"Mar","y":14908},{"x":"Apr","y":17818},{"x":"May","y":21435},{"x":"Jun","y":26047},{"x":"Jul","y":29900},{"x":"Aug","y":32545},{"x":"Sep","y":35485},{"x":"Oct","y":40420},{"x":"Nov","y":43074},{"x":"Dec","y":45918}]}
-		      ];
-        var chartType = "line";
-        var lineChartData = {
-            labels: labels1,
-            datasets: dataset
-        };
-
-        window.onload = function() {
-            var ctx = document.getElementById("canvas").getContext("2d");
-            sizeX = document.documentElement.clientWidth;
-            sizeY = document.documentElement.clientHeight;
-            coords = ctx.canvas.getBoundingClientRect();
-
-            newsizeY = sizeY-coords.y-70;
-            if (newsizeY<400) {
-              newsizeY=400;
-            }
-            ctx.canvas.height = newsizeY;
-            window.myBar = new Chart(ctx, {
-                type: chartType,
-                data: lineChartData,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    /*title: {
-                        display: true,
-                        text: title1
-                    },*/
-                    scales: {
-                      yAxes: [{
-                          stacked: false,
-                          scaleLabel: {
-                              display: true,
-                              labelString: chartOptions.yAxis
-                          }
-                      }],
-                      xAxes: [{
-                          scaleLabel: {
-                              display: true,
-                              labelString: chartOptions.xAxis
-                          }}]
-                        /*,
-                        xAxes: [{
-						                    display: true,
-						                    scaleLabel: {
-							                  display: true,
-							                  labelString: 'Day of Quarter'
-						                    }
-                              }]*/
-                    }
-
-                }
-            });
-
-        };
-    </script>
+		window.onload = function() {
+			var ctx = document.getElementById('myChart').getContext('2d');
+			window.myChart = new Chart(ctx, config);
+		};
+	</script>
   </div>
  
 	</div>	
