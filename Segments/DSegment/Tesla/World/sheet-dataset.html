@@ -319,7 +319,12 @@
 	<script>
 		var chartColors = {
 			red: 'rgb(255, 99, 132)',
-			blue: 'rgb(54, 162, 235)'
+			orange: 'rgb(255, 159, 64)',
+			yellow: 'rgb(255, 205, 86)',
+			green: 'rgb(75, 192, 192)',
+			blue: 'rgb(54, 162, 235)',
+			purple: 'rgb(153, 102, 255)',
+			grey: 'rgb(201, 203, 207)'
 		};
 
 		var color = Chart.helpers.color;
@@ -343,7 +348,7 @@
 				}, {
 					backgroundColor: 'transparent',
 					borderColor: chartColors.red,
-					pointBackgroundColor: chartColors.red,
+					pointBackgroundColor: chartColors.purple,
 					tension: 0,
 					fill: false
 				}]
@@ -371,11 +376,6 @@
 							labelString: 'Registrations By Month (Cummulative)'
 						}
 					}]
-				},
-				plugins: {
-					colorschemes: {
-						scheme: 'brewer.Paired12'
-					}
 				},
 				plugins: {
 					datasource: {
