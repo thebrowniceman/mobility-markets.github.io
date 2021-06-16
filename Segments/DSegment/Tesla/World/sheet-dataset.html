@@ -17,6 +17,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes"></script>
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	
@@ -327,7 +328,7 @@
 			data: {
 				datasets: [{
 					type: 'line',
-					yAxisID: 'Registrations By Month (Cummulative)',
+					yAxisID: 'Registrations By Month',
 					backgroundColor: 'transparent',
 					borderColor: chartColors.red,
 					pointBackgroundColor: chartColors.red,
@@ -336,7 +337,7 @@
 				}, {
 					backgroundColor: 'transparent',
 					borderColor: chartColors.red,
-					pointBackgroundColor: chartColors.red,
+					pointBackgroundColor: chartColors.blue,
 					tension: 0,
 					fill: false
 				}, {
@@ -370,6 +371,11 @@
 							labelString: 'Registrations By Month (Cummulative)'
 						}
 					}]
+				},
+				plugins: {
+					colorschemes: {
+						scheme: 'brewer.Paired12'
+					}
 				},
 				plugins: {
 					datasource: {
