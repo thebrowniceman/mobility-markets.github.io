@@ -309,10 +309,10 @@
 	    </div>
 
 	<script>
-		var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
+		var ctx = document.getElementById("myChart").getContext('2d');
+    		var myChart = new Chart(ctx, {
+  		type: 'pie',
+      	data: {
           	labels: ['China', 'Japan', 'USA', 'UK'],
           	datasets: [{
           	label: '# of xEVs',
@@ -331,9 +331,9 @@
               	'rgba(54, 162, 235, 1)',
               	'rgba(255, 206, 86, 1)',
               	'rgba(75, 192, 192, 1)'
-          	]
-    	  }
-			   });
+          	}]
+    	  	}
+	});
 </script>
 		  
 	</div>	
