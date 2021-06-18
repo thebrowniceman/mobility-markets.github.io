@@ -1,18 +1,18 @@
 /* eslint-disable no-undef */
 /**
- * Simple map
+ * geoJSON simple
  */
 
 // config map
 let config = {
-  minZoom: 7,
+  minZoom: 2,
   maxZomm: 18,
 };
 // magnification with which the map will start
-const zoom = 18;
+const zoom = 6;
 // co-ordinates
-const lat = 52.22977;
-const lng = 21.01178;
+const lat = 51.918904;
+const lng = 19.1343786;
 
 // calling map
 const map = L.map('map', config).setView([lat, lng], zoom);
@@ -23,3 +23,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution:
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
+
+function onEachFeature(feature, layer) {
+  layer.bindPopup(feature.properties.nazwa);
+}
+
+// adding geojson by fetch
+// of course you can use jquery, axios etc.
+fetch('../static/wojewodztwa-medium.geojson')
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    // use geoJSON
+    L.geoJSON(data, {
+      onEachFeature: onEachFeature,
+    }).addTo(map);
+  });
