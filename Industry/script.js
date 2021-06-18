@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /**
- * XXXXXXXXXXXX
+ * Simple map
  */
 
 // config map
