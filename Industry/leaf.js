@@ -88,12 +88,6 @@ info.onAdd = function (map) {
     return this._div;
 };
 
-// method that we will use to update the control based on feature properties passed
-info.update = function (props) {
-    this._div.innerHTML = '<h4>Number of Craft Breweries per State</h4>' +  (props ?
-       '<h5>' +  props.name + '</h5>'+'<b>'+ props.count_ + ' Craft Breweries'+'</b>'
-        : 'Hover over a State');
-};
 
 info.addTo(map);
 
