@@ -9,7 +9,7 @@ L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     subdomains: ['a','b','c']
 }).addTo( map );
 
-unction getColor(d) {
+function getColor(d) {
     return d > 1000 ? '#b10026' :
            d > 500  ? '#e31a1c' :
            d > 200  ? '#fc4e2a' :
