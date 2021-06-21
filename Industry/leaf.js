@@ -1,20 +1,30 @@
-var map = L.map( 'map', {
-    center: [53.0, 9.0],
-    minZoom: 2,
-    zoom: 2
-});
+var map = L.map('map').setView([53,13], 4);
+
 L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     subdomains: ['a','b','c']
 }).addTo( map );
 
-layerControl.addBaseLayer(OpenStreetMap_HOT, "Streets");
+unction getColor(d) {
+    return d > 1000 ? '#b10026' :
+           d > 500  ? '#e31a1c' :
+           d > 200  ? '#fc4e2a' :
+           d > 100  ? '#fd8d3c' :
+           d > 50   ? '#feb24c' :
+           d > 20   ? '#fed976' :
+           d > 10   ? '#ffeda0' :
+		   d < 10   ? '#ffffcc' :
+                      '#FFFFFF';
+}
 
-var url = "counties.topojson";
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.measlesrate),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        fillOpacity: 0.7
+    };
+}
 
-var counties = L.geoJson().addTo(map);
-
-/*can put html inside here, this is one way you could add a legend*/
-layerControl.addOverlay(counties, "Counties");
-
-var cData = omnivore.topojson(url, null, counties);
+L.geoJson(countriesData, {style: style}).addTo(map);
