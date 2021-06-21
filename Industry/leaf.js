@@ -10,7 +10,7 @@ L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 layerControl.addBaseLayer(OpenStreetMap_HOT, "Streets");
 
-var url = "/gis-tutorials/tutorial-data/counties.topojson";
+var url = "counties.topojson";
 
 var counties = L.geoJson().addTo(map);
 
