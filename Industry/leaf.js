@@ -80,18 +80,6 @@ geojson = L.geoJson(craft_beer, {
 
 
 
-var info = L.control();
-
-info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-};
-
-
-info.addTo(map);
-
-
 var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
