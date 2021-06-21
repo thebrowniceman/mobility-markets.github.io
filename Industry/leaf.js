@@ -78,7 +78,22 @@ geojson = L.geoJson(craft_beer, {
 
 // new additions for adding the custom info box when hover
 
+var info = L.control();
 
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+info.update = function (props) {
+    this._div.innerHTML = '<h4>Number of Firms per State</h4>' +  (props ?
+       '<h5>' +  props.name + '</h5>'+'<b>'+ props.count_ + ' Firms'+'</b>'
+        : 'Hover over a State');
+};
+
+info.addTo(map);
 
 var legend = L.control({position: 'bottomright'});
 
