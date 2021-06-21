@@ -6,12 +6,12 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenSt
 
 
 function getColor(d) {
- return    d > 300 ? '#005a32' :
-           d > 100  ? '#238b45' :
-           d > 50  ? '#41ab5d' :
-           d > 30  ? '#74c476' :
-           d > 20   ? '#a1d99b' :
-           d > 10   ? '#c7e9c0' :
+ return    d > 3 ? '#005a32' :
+           d > 2  ? '#238b45' :
+           d > 1  ? '#41ab5d' :
+           d > 0  ? '#74c476' :
+           d > 0   ? '#a1d99b' :
+           d > 0   ? '#c7e9c0' :
            d > 0   ? '#e5f5e0' :
 					  '#f7fcf5';
 }
