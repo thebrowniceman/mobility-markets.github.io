@@ -7,3 +7,14 @@ L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     subdomains: ['a','b','c']
 }).addTo( map );
+
+layerControl.addBaseLayer(OpenStreetMap_HOT, "Streets");
+
+var url = "/gis-tutorials/tutorial-data/counties.topojson";
+
+var counties = L.geoJson().addTo(map);
+
+/*can put html inside here, this is one way you could add a legend*/
+layerControl.addOverlay(counties, "Counties");
+
+var cData = omnivore.topojson(url, null, counties);
