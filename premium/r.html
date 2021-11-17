@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Mobility Markets</title>
+    
+	
+	<link rel="shortcut icon" type="image/jpg" href="https://mobility-markets.com/img/favicon.ico"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	
+	<script type="text/javascript">
+        /// some script
+
+        // jquery ready start
+        $(document).ready(function() {
+    	// jQuery code
+
+    	//////////////////////// Prevent closing from click inside dropdown
+        $(document).on('click', '.dropdown-menu', function (e) {
+          e.stopPropagation();
+        });
+
+        // make it as accordion for smaller screens
+        if ($(window).width() < 992) {
+    	  	$('.dropdown-menu a').click(function(e){
+              if ($(this).attr('class').search("dropdown-toggle")>-1) {
+                  e.preventDefault();
+              }
+    	        if($(this).next('.submenu').length){
+    	        	$(this).next('.submenu').toggle();
+    	        }
+    	        $('.dropdown').on('hide.bs.dropdown', function () {
+    			   $(this).find('.submenu').hide();
+    			})
+    	  	    });
+    	    }
+        }); // jquery end
+            </script>
+	<script type="text/javascript">
+		$(function() {
+  // Sidebar toggle behavior
+  $('#sidebarCollapse').on('click', function() {
+    $('#sidebar, #content').toggleClass('active');
+  });
+});
+	</script>
+	
+	    <style type="text/css">
+    	    @media (min-width: 992px){
+            .dropdown-menu .nav-item a { color: #000 !important; }
+    		    .dropdown-menu .dropdown-toggle:after{
+    			    border-top: .3em solid transparent;
+    		        border-right: 0;
+    		        border-bottom: .3em solid transparent;
+    		        border-left: .3em solid;
+    		        }
+            .navbar-fixed-top .navbar-collapse{
+                max-height:none;
+                }
+    		.dropdown-menu .dropdown-menu{
+    			margin-left:0; margin-right: 0;
+    		    }
+    		.dropdown-menu li{
+    			position: relative;
+    		    }
+    		.nav-item .submenu{
+    			display: none;
+    			position: absolute;
+    			left:100%; top:-7px;
+    		    }
+    		.nav-item .submenu-left{
+    			right:100%; left:auto;
+    		    }
+    		.dropdown-menu > li:hover{ background-color: #f3f3f3 }
+    		.dropdown-menu > li:hover > .submenu{
+    			display: block;
+    		    }
+		    .vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+		    .page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+    	    }
+        </style>
+	
+	<style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+		.chart {
+			margin: auto;
+			width: 75%;
+		}
+		.text-center {
+			text-align: center;
+		}
+	</style>
+	
+</head>
+
+<body>
+	<div id="app">
+		
+		<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center"><img src="https://mobility-markets.com/img/default.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      <div class="media-body">
+        <h4 class="m-0">
+		<a class="navbar-brand" href="https://mobility-markets.com/">Mobility <br> Markets</a></h4>
+        <p class="font-weight-light text-muted mb-0"></p>
+      </div>
+    </div>
+  </div>
+			
+
+			
+</div>
+<!-- End vertical navbar -->
+
+
+<!-- Page content holder -->
+<div class="container-fluid">
+<div class="page-content p-5" id="content">
+  <!-- Toggle button -->
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-primary rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Full Screen</small></button>
+
+	
+		
+<div class="container-sm" >
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header" align="center"> Subscribe for Premium Analytics & Services </div>
+              <div class="card-body">
+                <table class="table">
+                  <td align = "center">
+                    <h6>
+                    <br>
+                    <br>
+                    Premium Analytics & Services is available only with patreon subscription.<br>
+                    You may subscribe at <a href="https://www.patreon.com/mobilitymarkets">Mobility Market patreon page.</a>
+                  </h6>
+                    <br><a href = "mailto: deepak.purushothaman@rwth-aachen.de">Contact us</a>
+                  </td>
+                </table>
+
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+</div>
+</body>
+
+</html>
