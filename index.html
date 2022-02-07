@@ -4,7 +4,7 @@
 <head>
     <title>Mobility Markets | Decision Intelligence</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="FundComb is a free fund and institutional investor database with powerful search features. Easily find and filter investors by fund type, size, sector focus, geography and more!">
+    <meta name="description" content="Mobility Markets investor database with powerful search features. Easily find and filter investors by fund type, size, sector focus, geography and more!">
 
     <!-- for imessage preview -->
     <meta property="og:title" content="Mobility Markets | Decision Intelligence" />
@@ -20,22 +20,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
 
- <!-- <link href="/scripts/style.css?v=55" rel="stylesheet" type="text/css" media="screen"> -->
-
- <!-- use this when developing (moved to php) 
-<link href="/dist/index.css" rel="stylesheet" type="text/css" media="screen"> 
--->
-
- <!-- use this when building (moved to php)
- <link href="/build/output/index.css?v=1.43" rel="stylesheet" type="text/css" media="screen">
- --> 
 
 <link href='https://mobility-markets.com/demo1/build/output/index.css'; rel='stylesheet' type='text/css' media='screen'> 
 
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
- 
-<!-- <link href="/scripts-min/style.min.css?v=56" rel="stylesheet" type="text/css" media="screen"> -->
 
  
     <div id="nav-parent"> <html>
@@ -45,14 +33,6 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-margin bg-color-1">
     <div class="container container-nav-pad" id="container-nav"> 
         <a class="navbar-brand my-0" href="/" id="logo-nav"> 
-            <!--old - responsive
-            <span class="logo text-white d-xl-none">
-                <img src="/images/fundcomb-may2020-crop-short.png" class = "header-logo" alt="">  
-            </span>
-            <span class="logo text-white d-none d-xl-inline">
-                <img src="/images/fundcomb-jul2019bg-crop.png" class = "header-logo" alt="">  
-            </span>
-            -->
             <span class="logo text-white">
                 <img src="https://mobility-markets.com/img/favicon.png" class = "header-logo" alt=""> Mobility Markets 
             </span>
@@ -77,11 +57,6 @@
                             <button type="submit" class="no-border input-group-append bg-white search-addon search_nav_append cursor-pointer" style="display:none">
                                 <i class="fas fa-search my-auto text-grey small-text-2 pl-1 pr-1"> </i> 
                             </button>
-                            <!--removed
-                            <div class="no-border input-group-append search_nav_append cursor-pointer text-white font-weight-bold-soft my-auto pl-2 close_nav_search" style="display:none">
-                                <i class="fas fa-times my-auto small-text-2 pl-1 pr-1"> </i> Close
-                            </div>
-                            -->
                         </div>
                         <div id="nav-search-expand-mobile" class="search-expand-overlay-mobile p-2" style="display: none"> </div>
                     </div>
@@ -117,43 +92,6 @@
         <div class="collapse navbar-collapse text-white" id="navbarNav">
         
             <ul class="navbar-nav text-white">
-                <!-- md class below means margin (if m) or padding (if p) only applies at viewpoints larger than md https://getbootstrap.com/docs/4.0/utilities/spacing/#examples -->
-                <!-- <li id="indexMenu" class="nav-item px-lg-3"><a class="nav-link" href="/"><span class = "fas fa-home fa-fw"> </span> Home <span class="sr-only">(current)</span></a></li> -->
-                <!--
-                <li id ="about" class="nav-item px-md-3 text-md-center">
-                    <a class="nav-link" href="/about"> 
-                        <span class="d-inline d-sm-none"> <i class="fas fa-book fa-fw"> </i> </span>
-                        About
-                    </a>
-                </li>
-                -->
-                <!-- <li id ="blogMenu" class="nav-item"><a class="nav-link" href="blog.php"><span class = "fa fa-newspaper-o"> </span> Blog</a></li> -->
-                <!--
-                <li id ="contribute" class="nav-item px-md-3 text-md-center">
-                    <a class="nav-link" href="/contribute">
-                        <span class="d-inline d-sm-none"> <i class="fas fa-edit fa-fw"> </i> </span>
-                        Edit <span class="d-none d-lg-inline"> </span>Data 
-                    </a>
-                </li>
-                <li id ="blog" class="nav-item px-md-3 text-md-center">
-                    <a class="nav-link" href="/blog/">
-                        <span class="d-inline d-sm-none"> <i class="fas fa-newspaper fa-fw"> </i> </span>
-                        Blog 
-                    </a>
-                </li>
-                -->
-                <!-- works 
-                <li id ="nav-search" class="nav-item px-md-3 text-md-center">
-                    <a class="nav-link pt-0 pb-0" href="/search">
-                    <div class="input-group search-parent-st border-search-input br5 search-nav">
-                        <input type="text" class="small-text search-query form-control input-text-custom-pad no-border br10" name="search-free" id="search-free" placeholder="Search">
-                        <div class="input-group-append cursor-pointer"> 
-                            <button type="submit" class="input-group-text br10-fix no-border bg-white pr-2 pl-2 small-text" id="manual-search"> <i class="fas fa-search text-color-1"> </i> </button>
-                        </div>
-                    </div>
-                    </a>
-                </li>
-                -->
                 <!-- only shows up on non mobile -->
                 <li id ="nav-search" class="px-lg-3 px-md-1 my-auto d-none d-md-inline nav_search_parent">
                     <form name="nav-search-form" autocomplete='off'>
@@ -173,11 +111,6 @@
                                 <button type="submit" class="no-border input-group-append bg-white search-addon search_nav_append cursor-pointer" style="display:none">
                                     <i class="fas fa-search my-auto text-grey small-text-2 pl-1 pr-1"> </i> 
                                 </button>
-                                <!--removed
-                                <div class="input-group-append search_nav_append cursor-pointer font-weight-bold-soft bg-grey text-grey-1 pl-2 pr-2 br-ns-right close_nav_search" style="display:none">
-                                    <i class="fas fa-times my-auto pl-1 pr-1 lh-ih small-text-2"> </i> <span class="lh-ih small-text my-auto"> Close </span>
-                                </div>
-                                -->
                             </div>
                             <div id="nav-search-expand" class="search-expand-overlay p-2" style="display: none"> </div>
                         </div>
@@ -193,14 +126,7 @@
                         About Us
                     </a>
                 </li>
-                <!--
-                <li id ="find-advisor" class="nav-item px-md-1 px-lg-3 text-md-center">
-                    <a class="nav-link" href="/find-advisor">
-                        <span class="d-inline d-md-none"> <i class="fas fa-tools fa-fw"> </i> </span>
-                        Hire Advisors 
-                    </a>
-                </li>
-                -->
+
                 <li id ="invest-capital" class="nav-item px-md-2 px-lg-3 text-md-center">
                     <a class="nav-link" href="/invest-capital">
                         <span class="d-inline d-md-none"> <i class="fas fa-binoculars fa-fw"> </i> </span>
@@ -215,12 +141,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-small user-option no-pad pt-0 pt-md-2 bg-transparent no-border" aria-labelledby="navbarData">
                         <div class="dropdown-nav-box mt-0 mt-md-1">
-                            <!--
-                            <a class="dropdown-item pl-2 mt-1 mb-1 font-weight-bold-soft text-color-1" href="/about">
-                                <span class="d-inline"><i class="fas fa-certificate fa-fw fa-fw"> </i> </span>
-                                <span class="d-none d-lg-inline"></span> About Us 
-                            </a>
-                            -->
+
                             <a class="dropdown-item pl-2 mt-1 mb-1 font-weight-bold-soft text-color-1" href="https://mobility-markets.com/Group/AllianceYoY">
                                 <span class="d-inline"><i class="fas fa-edit fa-fw fa-fw"> </i> </span>
                                 <span class="d-none d-lg-inline"></span> Sales Analytics
@@ -236,30 +157,7 @@
                     
                 </li>
 
-                
-                <!--
-
-                <li id="investor-data" class="nav-item dropdown px-md-3 text-md-center">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="d-inline d-sm-none"><i class="fas fa-database fa-fw"> </i> </span>
-                        <span class="d-none d-lg-inline"> </span> Stats 
-                    </a>
-                    <div class="dropdown-menu dropdown-small user-option no-pad bg-color-1" aria-labelledby="navbarData">
-                        <a class="dropdown-item text-white" href="/lists">
-                            <span class="d-inline d-sm-none"><i class="fas fa-clipboard-list fa-fw"> </i> </span>
-                            <span class="d-none d-lg-inline"></span> Lists 
-                        </a>
-                        <a class="dropdown-item text-white" href="/overview">
-                            <span class="d-inline d-sm-none"><i class="fas fa-helicopter fa-fw"> </i> </span>
-                            <span class="d-none d-lg-inline"></span> Overviews 
-                        </a>
-                    </div>
-                    
-                </li>
-
-                -->
-                <!-- <li class="nav-item px-md-3 text-md-center"><a class="nav-link" href="/jobs-search/"><span class = "fas fa-briefcase fa-fw"> </span> <span class="d-none d-lg-inline"> Find </span> Jobs </a></li> -->
-                
+                          
                 
             </ul>
         
@@ -422,11 +320,7 @@
                         </div> <!-- Close off overall tab (loginRegister) -->
                     </div> <!-- Close modal body  -->  
 
-            <!--
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            -->
+
                 </div>  <!-- Close modal content  --> 
             </div> <!-- Close modal dialogue  --> 
         </div> <!-- Close modal (fade) section  -->   
@@ -442,8 +336,6 @@
 
 
  </div>   
-    
-    <!--removed 26 apr 2021 <script type='text/javascript' src='/scripts/script-address-simple.js?v=10'></script> -->
 
 
 </head>
@@ -452,18 +344,6 @@
 
     <input type='hidden' id='js_t' value='landing'> </input>    
      
-
-    <!-- LOCAL START 
-    <script type="text/javascript" src="/scripts/script-address-simple.js?v=10"></script>    
-    <script type="text/javascript" src="/scripts/script-search.js?v=11"></script>   
-    -->   
-
-        
-    <!-- LOCAL END -->
-
-    <!-- Body HTML start -->
-
-
 
 <div class="container-fluid no-pad bg-color-1 l-box-main">
     <div class="container pt-4 mb-2 mb-sm-0">
@@ -475,10 +355,7 @@
                 </h1>          
                 
                 
-                
-                <!--
-                <div class="c-h1-sub-alt text-white mt-3"> Whether you are looking to raise equity or debt capital, sell your business, hire advisors, or browse investment opportunities, we have you covered. Fast. Simple. Free. </div>
-                -->
+               
                 <div class="l-h-sub-1 text-white mt-4"> Mobility Markets integrates Data, Models and Visualization for hard to uncover Automotive Business, Technology & Product problems. It contains library of models to assist StratUps, Venture Capitalists & Corporate functions like Strategy, M&A, Capital Raise, Business Intelligence, Product Management, Growth, Marketing and More </div>
 
                 <div class="mt-3">
@@ -492,80 +369,6 @@
                 </div>
                 
             </div>
-
-            <!--
-            <div class="col-12 no-pad no-margin-lr">
-                <h4 class="text-color-1 font-weight-normal"> 
-                    Help me find...
-                </h4>                 
-            </div>
-            -->
-
-
-
-
-            <!--rem 19/9/20
-            <div class="col-12 no-pad"> 
-                <div class="text-white font-weight-bold"> How can we help? Select one: </div> 
-            </div>
-            <a class="col-12 col-sm text-center text-color-1 pt-2 pb-2 pt-sm-3 pb-sm-3 exp-mgn express-separator-alt qsearch-item hover-color-1" href="/raise-capital/raise-equity"> 
-                <div class="col-min-width-2">
-                    <i class="fas fa-money-check-alt font-size-2r"> </i> 
-                    <div class="pt-1">
-                            Raise equity capital and find <span class="strong"> investors </span> for my <span class="strong"> business </span>                                
-                    </div>
-                </div>                                    
-            </a>
-
-            <a class="col-12 col-sm text-center text-color-1 pt-2 pb-2 pt-sm-3 pb-sm-3 exp-mgn express-separator-alt qsearch-item hover-color-1" href="/raise-capital/sell-business"> 
-                <div class="col-min-width-2">
-                    <i class="fas fa-gavel font-size-2r"> </i>  
-                    <div class="pt-1">
-                        <span class="strong"> Sell </span> my business and find potential <span class="strong"> acquirers </span> 
-                    </div>
-                </div>                
-            </a>
-
-            <a class="col-12 col-sm text-center text-color-1 pt-2 pb-2 pt-sm-3 pb-sm-3 exp-mgn express-separator-alt qsearch-item hover-color-1" href="/raise-capital/raise-debt"> 
-                <div class="col-min-width-2">
-                    <i class="fas fa-credit-card font-size-2r"> </i>  
-                    <div class="pt-1">
-                        Raise <span class="strong"> debt </span> or structured capital and find lenders for my business
-                    </div>
-                </div>                
-            </a>
-
-            <div class="w-100 d-xl-none"> </div>
-
-            <a class="col-12 col-sm text-center text-color-1 pt-2 pb-2 pt-sm-3 pb-sm-3 exp-mgn express-separator-alt qsearch-item hover-color-1" href="/find-advisor"> 
-                <div class="col-min-width-2">
-                    <i class="fas fa-tools font-size-2r"> </i>  
-                    <div class="pt-1">
-                        Find an <span class="strong"> advisor </span> to assist my business or fund </span>
-                    </div>
-                </div>                
-            </a>
-
-            <a class="col-12 col-sm text-center text-color-1 pt-2 pb-2 pt-sm-3 pb-sm-3 exp-mgn express-separator-alt qsearch-item hover-color-1" href="/raise-capital/raise-fund"> 
-                <div class="col-min-width-2">
-                    <i class="fas fa-anchor font-size-2r"> </i>  
-                    <div class="pt-1">
-                        Raise capital for a fund and find potential <span class="strong"> investors (LP's) </span> 
-                    </div>
-                </div>                
-            </a>
-
-            <a class="col-12 col-sm text-center text-color-1 pt-2 pb-2 pt-sm-3 pb-sm-3 exp-mgn express-separator-alt qsearch-item hover-color-1" href="/invest-capital"> 
-                <div class="col-min-width-2">
-                    <i class="fas fa-binoculars font-size-2r"> </i>  
-                    <div class="pt-1">
-                        Find <span class="strong"> investment opportunities </span> to invest my own capital
-                    </div>
-                </div>                
-            </a>
-
-            -->
-
            
 
         </div>
@@ -622,19 +425,6 @@
                              
                     <a href="/raise-capital/raise-equity" class="a-style-suggest pt-3 pb-3 pr-3"> <button class="btn-l-main btn-c-1 pl-3 pr-3"> <i class="fas fa-wallet"></i> Search  </button> </a>           
                             
-                    <!--
-                    <div class="small-text font-weight-bold mt-2"> <i class="fas fa-wallet"></i> Equity (Venture, Growth or Other) </div>
-                    <a href="/raise-capital/raise-equity/country-australia" class="a-style-suggest"> <button class="btn-l-main btn-c-1"> <i class="fas fa-globe fa-fw"> </i> Australia  </button> </a>
-                    <a href="/raise-capital/raise-equity/country-united-states" class="a-style-suggest"> <button class="btn-l-main btn-c-1"> <i class="fas fa-globe fa-fw"> </i> USA </button> </a>
-                    <a href="/raise-capital/raise-equity/country-united-kingdom" class="a-style-suggest"> <button class="btn-l-main btn-c-1"> <i class="fas fa-globe fa-fw"> </i> UK </button> </a>
-                    <a href="/raise-capital/raise-equity/country-other" class="a-style-suggest"> <button class="btn-l-main btn-c-1"> <i class="fas fa-globe fa-fw"> </i> Other/All </button> </a>
-
-                    <div class="small-text mt-3 font-weight-bold"> <i class="far fa-credit-card"></i> Debt </div>
-                    <a href="/raise-capital/raise-equity/country-australia" class="a-style-suggest"> <button class="btn-l-main btn-c-1"> <i class="fas fa-globe fa-fw"> </i> Australia  </button> </a>
-                    <a href="/raise-capital/raise-equity/country-united-states" class="a-style-suggest"> <button class="btn-l-main btn-c-1"> <i class="fas fa-globe fa-fw"> </i> USA </button> </a>
-                    <a href="/raise-capital/raise-equity/country-united-kingdom" class="a-style-suggest"> <button class="btn-l-main btn-c-1"> <i class="fas fa-globe fa-fw"> </i> UK </button> </a>
-                    <a href="/raise-capital/raise-equity/country-other" class="a-style-suggest"> <button class="btn-l-main btn-c-1"> <i class="fas fa-globe fa-fw"> </i> Other/All </button> </a>
-                    -->
                 </div> 
 
             </div>
@@ -829,26 +619,6 @@
         <input type='hidden' name='showLimit' id='showLimit' value='10'> <!--holds limit value for search results, updates with 'show more' clicks -->
         <span id='numResults' style='display:none'> </span> <!--holds num search results, used for infinite scroll trigger -->
 
-        <!--
-        <div class='col-auto col-l-pad-alt-2'>   
-            <div class='div-btn-filter' id='cs-filter'>
-                <button type='button' class='btn btn-filter-mini text-color-1 font-weight-bold' name='btn-filter-cs'>
-                    <div class='d-flex flex-row small-text'>
-                        <i class='fas fa-sliders-h lh-ih pr-1'> </i>
-                        <span class='filter-text'> Filters </span>
-                    </div>
-                </button> 
-            </div>
-                    
-            <div class='filter-option' id='cs-options' style='display:none'> 
-            <button type ='button' class='btn btn-check sel-function small-text'> 
-                <span class='floatRight cursor-pointer'> <span class='fas fa-times fa-fw'></span> Unselect all </span> Select at least one:
-            </button>
-                <div class='initial-filter-margin'> </div> 
-                <div class='check-space'> </div>
-            </div> 
-        </div>
-        -->
        
         <div class='col-auto col-l-pad-alt-2 col_parent'>   
             <div class='filter_parent' id='cs-filter'> <!-- used for show/hide toggle -->
@@ -977,12 +747,6 @@
 
                 <div class='l-pad-sm small-text text-color-1 font-weight-bold'> Either enter a state or country... </div>
 
-                <!--disabled 12 mar 2021 
-                <div class='input-group l-pad-sm r-pad-sm' id='autocomplete-parent'>
-                    <input class = 'form-control border-box input-med-width' id='autocomplete' placeholder='Examples: CA or USA' onFocus='geolocate()' type='text' name='autocomplete'>
-                    <span style='display:none' id='address-add'> </span>
-                </div>  
-                -->
 
                 <!--this inserted 12 mar 2021 -->
                 <div class='input_with_suggest_gp'>
@@ -1065,14 +829,6 @@
                         <div class='w-100 d-md-none'> <hr> </div>
                                                                                                 
                         <div class='col text-center'>
-                            <!-- <span class = 'font-size-2 text-color-1'> Maximum </span> -->
-                            <!-- up-down class used for script trigger, id number used for amount adjust -->
-                            <!--
-                            <span class='fa-stack up-down' id='d-100'> 
-                                <i class='far fa-circle fa-stack-1x fa-size-3b text-color-1 cursor-pointer'> </i>
-                                <i class='fas fa-angle-left fa-stack-1x fa-size-3 text-color-1 cursor-pointer'> </i> 
-                            </span>  
-                            --> 
 
                             <span class='fa-stack up-down -10'> <span class='-10'>
                                 <i class='fas fa-angle-double-left fa-stack-1x fa-size-2a text-color-1 cursor-pointer'> </i> 
@@ -1214,40 +970,6 @@
 
 <div class='d-sm-none small-text text-grey-1 text-right font-italic'> Swipe for more filters </div>
 
-<!--
-<div class='container small-up-margin-b'>
-    <div class='row'>
-        <div class='col col-l-pad-alt no-r-pad'>                
-            <button class='btn btn-block btn-size-3 cursor-pointer text-white search-refresh border-box bg-color-1 font-weight-bold' id='search-fund-refresh'>
-            <span> <i class='fas fa-sync-alt'></i> Run search </span>
-            </button>
-        </div>
-
-        <div class='col-auto col-r-pad-alt no-l-pad'> 
-            <button class='btn btn-block btn-size-3 cursor-pointer bg-white text-color-1 search-save border-box font-weight-bold' id='search-fund-save'>
-            <span> <i class='far fa-heart fa-fw'></i> Save </span>
-            </button>
-        </div>
-
-
-        <div class='col-12 col-pad-alt'>
-            <div id='save_search_message' class='small-text mb-2'> </div>
-            <div id='save_search_name_display' class='mt-2' style='display:none'>   
-                <div id='last_save_id' style='display:none'> </div>
-
-                <div class='input-group'>
-                    <input type='text' name='save_search_name' id='save_search_name' class='form-control'>
-                    <div class='input-group-append'>
-                        <span id='save_search_name_submit' class='addon-custom bg-color-3-alt hover-color-1 cursor-pointer text-white font-weight-bold'> <i class='far fa-save'></i> </span>
-                    </div>
-                </div>
-
-            </div>
-        
-        </div>
-    </div>
-</div>
--->
 
 
     <div class='row mt-1'>  
@@ -1319,40 +1041,12 @@
 
 
 
-<!--no longer on main page
-    
-</html>
-                               1       
-    </div> 
-    <!-- Body HTML end -->
-
-    <!-- moved to head <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<!--now use compiled
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
--->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 
-<!-- jquery (not yet updated), popper, bootstrap js old versions 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
--->
 
-<!-- jquery validation library 
-<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
-<!-- standardised js -->
-<!--<script type="text/javascript" src="/scripts/script.js?v=53"></script>-->
-<!-- <script type="text/javascript" src="/scripts-min/script.min.js?v=57"></script> -->
 
-<!--  use when developing     
-<script src='/dist/index.js'></script> 
---> 
- 
-<!-- use for final build 
-<script src='/build/output/index.js?v=1.43'></script>   
--->   
 
 <script src='https://mobility-markets.com/demo1/build/output/index.js'></script>
 
@@ -1368,16 +1062,6 @@
     }
 </script>
 
-<!--prior fonts
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
--->
 
 
 
